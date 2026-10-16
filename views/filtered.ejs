@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('home') %>
+
+    <div class="pagehead <%= type %>">
+        <h1><%= title %></h1>
+        <span><%= result.length %> found</span>
+    </div>
+
+    <% if (result.length === 0) { %>
+        <p class="empty">NONE.</p>
+    <% } %>
+
+    <% for (let task = 0; task < result.length; task++) { %>
+        <div class="listbox">
+            <p>FullName:<%=result[task].name%></p>
+            <p>Roll no:<%=result[task].rollno%></p>
+            <p>Phone Number:<%=result[task].phone%></p>
+            <p>Email:<%=result[task].email%></p>
+            <p>Course:<%=result[task].course%></p>
+            <p>Date-of-Birth:<%=result[task].dob%></p>
+            <p>Admission Date:<%=result[task].date%></p>
+            <p>Gender:<%=result[task].gender%></p>
+            <p class="status <%= String(result[task].status) %>">Status:<%=result[task].status%></p>
+        </div>
+    <% } %>
+</body>
+</html>
