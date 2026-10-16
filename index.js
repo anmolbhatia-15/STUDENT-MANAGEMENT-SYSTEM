@@ -78,13 +78,13 @@ resp.render('filtered',{result,title:'ActiveStudents',type:'active'})
 app.get('/inactive',async(req,resp)=>{
     const db=await connection()
     const collection=await  db.collection(collectionName).find().toArray()
-    let total=[]
+    let result=[]
 
     for(let i=0;i<collection.length;i++){
         if(collection[i].status!=="active"){
-          total.push(collection[i])
+          result.push(collection[i])
         }
     }
-    resp.render('filtered',{total,title:'InactiveStudents',type:'Inactive'})
+    resp.render('filtered',{result,title:'inactiveStudents',type:'inactive'})
 })
 app.listen(3200)

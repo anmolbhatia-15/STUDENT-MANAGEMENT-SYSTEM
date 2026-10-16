@@ -733,7 +733,7 @@ a.statcard:hover {
     background: linear-gradient(90deg, #16a34a, #15803d);
 }
 
-.pagehead.inactive {
+.pagehead.inactive{
     background: linear-gradient(90deg, #dc2626, #b91c1c);
 }
 
